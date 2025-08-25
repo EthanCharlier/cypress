@@ -1,0 +1,87 @@
+/* --- Minimal, propre, responsive (clair + dark auto) --- */
+:root{
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --fg:#151618;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --accent:#111827;      /* bouton sobre */
+  --accent-weak:#0ea5e922;
+  --ok:#059669;
+  --err:#d93025;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0c0f;
+    --surface:#111216;
+    --fg:#e6e7eb;
+    --muted:#a1a6b0;
+    --line:#23252b;
+    --accent:#e6e7eb;
+    --accent-weak:#60a5fa22;
+  }
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:var(--bg);
+  color:var(--fg);
+}
+
+/* conteneur centré, très simple */
+.wrap{
+  width:min(720px,92vw);
+  margin-inline:auto;
+  padding:40px 0 56px;
+}
+
+.top h1{margin:0 0 2px;font-size:28px;letter-spacing:.2px}
+.top .muted{margin:0 0 24px;color:var(--muted);font-size:13px}
+
+/* form plein largeur, sans carte ni ombre */
+.form{
+  display:grid;
+  gap:16px;
+  width:100%;
+}
+
+.row{display:grid;gap:6px}
+
+label{font-size:13px;color:var(--muted)}
+
+input, textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:var(--fg);
+  outline:none;
+}
+input:focus, textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px var(--accent-weak);
+}
+
+button{
+  justify-self:start;
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:var(--bg);
+  padding:12px 18px;
+  border-radius:9999px;
+  font-weight:600;
+  cursor:pointer;
+}
+button:active{transform:translateY(1px)}
+
+.result{
+  min-height:1.25em;
+  color:var(--ok);
+  font-weight:600;
+}
+.error{color:var(--err);margin:0}

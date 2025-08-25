@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chiffre de César — Minimal</title>
+  <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Chiffre de César</h1>
+      <p class="muted">Vanilla JS</p>
+    </header>
+
+    <form id="cipherForm" class="form" novalidate>
+      <div class="row">
+        <label for="key">Clé (0–25)</label>
+        <input id="key" name="key" type="number" inputmode="numeric"
+               min="0" max="25" step="1" placeholder="0–25" required />
+      </div>
+
+      <div class="row">
+        <label for="plain">Texte</label>
+        <textarea id="plain" name="plain" rows="4"
+                  placeholder="Hello World!" required></textarea>
+      </div>
+
+      <button id="submitBtn" type="submit">Chiffrer</button>
+
+      <output id="result" class="result" aria-live="polite"></output>
+      <p id="error" class="error" role="alert" hidden></p>
+    </form>
+  </main>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
